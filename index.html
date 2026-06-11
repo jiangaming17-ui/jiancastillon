@@ -6,44 +6,232 @@
     <title>Jian Castillon Web Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-        body { background-color: #f9fbf9; color: #333; line-height: 1.6; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: #fff; border-bottom: 1px solid #eaeaea; }
-        .logo { font-size: 1.3rem; font-weight: 500; color: #111; }
-        nav { display: flex; align-items: center; gap: 25px; }
-        nav a { text-decoration: none; color: #333; font-size: 0.95rem; }
-        .social-icons { display: flex; gap: 15px; font-size: 1.1rem; }
-        .social-icons a { color: #000; }
-        .profile-container { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; align-items: center; }
-        .profile-image-container { flex: 1; display: flex; justify-content: center; }
-        .placeholder-avatar { width: 100%; max-width: 450px; height: 350px; background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #64748b; text-align: center; padding: 20px; }
-        .contact-form-container { flex: 1; }
-        .contact-form-container h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 400; }
-        .contact-form-container p { color: #666; margin-bottom: 25px; }
-        .form-group { margin-bottom: 15px; }
-        .form-row { display: flex; gap: 15px; }
-        .form-row .form-group { flex: 1; }
-        label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; }
-        input[type="text"], input[type="email"], textarea { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background-color: #f8fafc; }
-        .checkbox-group { display: flex; align-items: center; gap: 8px; margin: 15px 0; }
-        button.submit-btn { background-color: #1a1a1a; color: #fff; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; }
-        .tools-section { background-color: #fff; padding: 60px 20px; text-align: center; border-top: 1px solid #eaeaea; }
-        .tools-section h2 { font-size: 2.2rem; font-weight: 400; margin-bottom: 10px; }
-        .tools-section .subtitle { color: #666; max-width: 600px; margin: 0 auto 40px auto; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-        .tool-card { background: #fff; padding: 25px 15px; border-radius: 4px; border: 1px solid #f0f0f0; }
-        .tool-icon { width: 60px; height: 60px; margin: 0 auto 15px auto; display: flex; justify-content: center; align-items: center; border-radius: 12px; font-weight: bold; font-size: 1.1rem; color: white; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9fbf9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #fff;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #111;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        .social-icons a {
+            color: #000;
+            transition: color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #1877f2;
+        }
+
+        /* --- Profile Hero Layout Section --- */
+        .hero-section {
+            display: flex;
+            background-color: #fff;
+            max-width: 100%;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .hero-left {
+            flex: 1.1;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            min-height: 550px;
+        }
+
+        .hero-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-right {
+            flex: 0.9;
+            background-color: #e5ecd7; /* Light sage green tint mirroring your references */
+            padding: 60px 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-right h1 {
+            font-size: 2.5rem;
+            color: #111;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero-right p {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* --- Equipment/Tools Section --- */
+        .tools-section {
+            background-color: #f9fbf9;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .tools-section h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .tools-section .subtitle {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 1rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: #fff;
+            padding: 35px 20px;
+            border-radius: 6px;
+            border: 1px solid #eef2ed;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
+        }
+
+        /* Clean stylized badge layout icons */
+        .tool-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        /* Core tool specific branding colors */
         .icon-excel { background-color: #107c41; }
         .icon-word { background-color: #2b579a; }
         .icon-canva { background: linear-gradient(45deg, #00c2cb, #7d2ae8); }
-        .icon-capcut { background-color: #000000; }
+        .icon-capcut { background-color: #000000; font-size: 1.2rem; }
         .icon-vscode { background-color: #007acc; }
         .icon-mysql { background-color: #00758f; }
-        .tool-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-        .tool-card p { font-size: 0.85rem; color: #666; }
-        footer { text-align: center; padding: 40px 20px; font-size: 0.85rem; color: #888; border-top: 1px solid #eaeaea; }
-        footer a { color: #333; text-decoration: none; }
-        @media (max-width: 768px) { .profile-container { flex-direction: column; } header { flex-direction: column; gap: 15px; } .form-row { flex-direction: column; gap: 0; } }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eaeaea;
+        }
+
+        footer a {
+            color: #1877f2;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive view adaptation */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+            }
+            .hero-left {
+                min-height: 400px;
+            }
+            .hero-right {
+                padding: 40px 6%;
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-right h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -56,87 +244,75 @@
             <a href="#">Contact</a>
             <div class="social-icons">
                 <a href="https://www.facebook.com/Yurujinx" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </nav>
     </header>
 
-    <main class="profile-container">
-        <div class="profile-image-container">
-            <div class="placeholder-avatar">
-                <i class="fas fa-user-circle" style="font-size: 4rem; margin-bottom: 10px;"></i>
-                <p><strong>[ Your Photo Here ]</strong></p>
-            </div>
+    <main class="hero-section">
+        <div class="hero-left">
+            <img src="https://raw.githubusercontent.com/jiangaming17-ui/jiancastillon/main/0c56c370-b836-4612-ba38-1669810790ec.jfif" alt="Jian Castillon Portrait" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000';">
         </div>
-
-        <div class="contact-form-container">
-            <h1>Contact me</h1>
-            <p>If you have a question or you're interested in collaborating, please provide your information.</p>
-            
-            <form onsubmit="event.preventDefault();">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" placeholder="First Name">
-                    </div>
-                    <div class="form-group">
-                        <label>&nbsp;</label>
-                        <input type="text" placeholder="Last Name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email">
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea rows="5"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
+        <div class="hero-right">
+            <h1>About Jian Castillon</h1>
+            <p>Hi, I'm Jian Castillon, a passionate and dedicated web development enthusiast with a strong interest in creating modern, responsive, and user-friendly websites and web applications. I enjoy exploring the latest web technologies, improving my programming skills, and turning ideas into functional digital solutions.</p>
+            <p>My interests include front-end and back-end development, website design, user experience optimization, and learning industry best practices. I am continuously expanding my knowledge of web development frameworks, programming languages, and development tools to stay current with the rapidly evolving technology landscape.</p>
+            <p>I am committed to writing clean, efficient, and maintainable code while focusing on delivering high-quality results. I enjoy solving problems, learning new technologies, and collaborating with others to build innovative web solutions that make a positive impact.</p>
+            <p>As an aspiring web developer, I am eager to gain hands-on experience, contribute to meaningful projects, and further develop my technical and professional skills. My goal is to build a successful career in the technology industry by continuously learning, adapting, and embracing new challenges.</p>
         </div>
     </main>
 
     <section class="tools-section">
         <h2>The Tools I use daily</h2>
-        <p class="subtitle">Core applications and environments that fuel my workflow daily.</p>
+        <p class="subtitle">Here are the core applications and development frameworks that power my layout workflow daily.</p>
 
         <div class="tools-grid">
             <div class="tool-card">
                 <div class="tool-icon icon-excel">X</div>
                 <h3>Excel</h3>
-                <p>Data tracking and structured document models.</p>
+                <p>Data manipulation, metrics organization, and tracking structural development models.</p>
             </div>
+
             <div class="tool-card">
                 <div class="tool-icon icon-word">W</div>
                 <h3>Word</h3>
-                <p>Drafting project requirements and documentation.</p>
+                <p>Documentation design, drafting project specifications, and structured text layout assets.</p>
             </div>
+
             <div class="tool-card">
                 <div class="tool-icon icon-canva">Canva</div>
                 <h3>Canva</h3>
-                <p>Quick asset generation and UI mockups.</p>
+                <p>Graphic layout, fast user interface mockup creation, prototyping, and design references.</p>
             </div>
+
             <div class="tool-card">
                 <div class="tool-icon icon-capcut">CapCut</div>
                 <h3>CapCut</h3>
-                <p>Video editing for application demos.</p>
+                <p>Video processing for layout recordings, web application tutorials, and concept demos.</p>
             </div>
+
             <div class="tool-card">
                 <div class="tool-icon icon-vscode"><i class="fas fa-code"></i></div>
                 <h3>VS Code</h3>
-                <p>Primary code editor for writing scripts and layouts.</p>
+                <p>Primary localized code environment for script architecture, markup, styling, and debugging.</p>
             </div>
+
             <div class="tool-card">
                 <div class="tool-icon icon-mysql"><i class="fas fa-database"></i></div>
                 <h3>MySQL</h3>
-                <p>Relational databases and schema planning.</p>
+                <p>Relational database setup, managing structured schemas, and active data architecture execution.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Jian Castillon Web Application. All rights reserved.</p>
-        <p><a href="https://www.facebook.com/Yurujinx" target="_blank"><i class="fab fa-facebook-f"></i> Connect via Facebook</a></p>
+        <p>
+            <a href="https://www.facebook.com/Yurujinx" target="_blank">
+                <i class="fab fa-facebook"></i> Connect via Facebook
+            </a>
+        </p>
     </footer>
 
 </body>
