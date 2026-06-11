@@ -45,6 +45,7 @@
             text-decoration: none;
             color: #333;
             font-size: 0.95rem;
+            font-weight: 500;
         }
 
         .social-icons {
@@ -62,7 +63,7 @@
             color: #1877f2;
         }
 
-        /* --- Profile Hero Layout Section --- */
+        /* --- Profile About Me Hero Section --- */
         .hero-section {
             display: flex;
             background-color: #fff;
@@ -71,8 +72,8 @@
         }
 
         .hero-left {
-            flex: 1.1;
-            background-color: #000;
+            flex: 1;
+            background-color: #fafafa;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -88,104 +89,157 @@
         }
 
         .hero-right {
-            flex: 0.9;
-            background-color: #e5ecd7; /* Light sage green tint mirroring your references */
-            padding: 60px 5%;
+            flex: 1.2;
+            background-color: #f3f6f0; /* Soft light background framework tint */
+            padding: 60px 6%;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .hero-right h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             color: #111;
             margin-bottom: 20px;
-            font-weight: 400;
+            font-weight: 500;
+            letter-spacing: -0.5px;
         }
 
         .hero-right p {
             color: #444;
-            font-size: 1rem;
-            margin-bottom: 15px;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
             text-align: justify;
         }
 
-        /* --- Equipment/Tools Section --- */
+        /* --- Inventory System Showcase Section (Bird Gallery Reference) --- */
+        .showcase-section {
+            background-color: #fff;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .showcase-section h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .showcase-section .subtitle {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            font-size: 1.05rem;
+        }
+
+        /* Grid display showing off screenshots cleanly like a portfolio */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+        }
+
+        .showcase-card {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #eef2ed;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.07);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 240px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #f0f0f0;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .card-meta {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .card-meta h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        .card-meta p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* --- Equipment/Tools Grid Section --- */
         .tools-section {
             background-color: #f9fbf9;
             padding: 80px 20px;
             text-align: center;
+            border-top: 1px solid #eaeaea;
         }
 
         .tools-section h2 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 400;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
             color: #111;
-        }
-
-        .tools-section .subtitle {
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-            font-size: 1rem;
         }
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .tool-card {
             background: #fff;
-            padding: 35px 20px;
+            padding: 25px 15px;
             border-radius: 6px;
             border: 1px solid #eef2ed;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
-        }
-
-        /* Clean stylized badge layout icons */
         .tool-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px auto;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 14px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: white;
         }
 
-        /* Core tool specific branding colors */
         .icon-excel { background-color: #107c41; }
         .icon-word { background-color: #2b579a; }
         .icon-canva { background: linear-gradient(45deg, #00c2cb, #7d2ae8); }
-        .icon-capcut { background-color: #000000; font-size: 1.2rem; }
+        .icon-capcut { background-color: #000000; }
         .icon-vscode { background-color: #007acc; }
         .icon-mysql { background-color: #00758f; }
 
-        .tool-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .tool-card p {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-        }
+        .tool-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        .tool-card p { font-size: 0.85rem; color: #666; }
 
         /* --- Footer --- */
         footer {
@@ -204,33 +258,14 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            margin-top: 10px;
         }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive view adaptation */
+        /* --- Responsive Breaks --- */
         @media (max-width: 992px) {
-            .hero-section {
-                flex-direction: column;
-            }
-            .hero-left {
-                min-height: 400px;
-            }
-            .hero-right {
-                padding: 40px 6%;
-            }
-        }
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero-right h1 {
-                font-size: 2rem;
-            }
+            .hero-section { flex-direction: column; }
+            .hero-left { min-height: 450px; }
+            .hero-right { padding: 40px 6%; }
+            .showcase-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -239,23 +274,20 @@
     <header>
         <div class="logo">Jian Castillon Web Application</div>
         <nav>
-            <a href="#">What I Do</a>
-            <a href="#">Info</a>
-            <a href="#">Contact</a>
+            <a href="#about-me">About Me</a>
+            <a href="#showcase">Inventory Project</a>
             <div class="social-icons">
                 <a href="https://www.facebook.com/Yurujinx" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </nav>
     </header>
 
-    <main class="hero-section">
+    <main class="hero-section" id="about-me">
         <div class="hero-left">
-            <img src="https://raw.githubusercontent.com/jiangaming17-ui/jiancastillon/main/0c56c370-b836-4612-ba38-1669810790ec.jfif" alt="Jian Castillon Portrait" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000';">
+            <img src="0c56c370-b836-4612-ba38-1669810790ec.jfif" alt="Jian Castillon Headshot">
         </div>
         <div class="hero-right">
-            <h1>About Jian Castillon</h1>
+            <h1>About Me</h1>
             <p>Hi, I'm Jian Castillon, a passionate and dedicated web development enthusiast with a strong interest in creating modern, responsive, and user-friendly websites and web applications. I enjoy exploring the latest web technologies, improving my programming skills, and turning ideas into functional digital solutions.</p>
             <p>My interests include front-end and back-end development, website design, user experience optimization, and learning industry best practices. I am continuously expanding my knowledge of web development frameworks, programming languages, and development tools to stay current with the rapidly evolving technology landscape.</p>
             <p>I am committed to writing clean, efficient, and maintainable code while focusing on delivering high-quality results. I enjoy solving problems, learning new technologies, and collaborating with others to build innovative web solutions that make a positive impact.</p>
@@ -263,52 +295,92 @@
         </div>
     </main>
 
+    <section class="showcase-section" id="showcase">
+        <h2>Starlee Marketing System</h2>
+        <p class="subtitle">A deep dive into the user interfaces, administrative tools, and ledger tracking features built for this custom inventory system platform application.</p>
+
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <div class="image-wrapper">
+                    <img src="a52af232-2ac2-41c5-9897-49fbc2cb179b.jfif" alt="System Dashboard Panel View">
+                </div>
+                <div class="card-meta">
+                    <h3>Analytics Dashboard</h3>
+                    <p>Features dynamic metrics tracking cards displaying absolute product counts, high/low inventory thresholds, and data visualization bar charts mapping categories.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <div class="image-wrapper">
+                    <img src="afbb7516-a06e-4dda-aa7a-dad3856b3918.jfif" alt="Inventory Workspace Panel View">
+                </div>
+                <div class="card-meta">
+                    <h3>Inventory Workspace</h3>
+                    <p>A full layout relational table displaying critical asset parameters including product name definitions, supplier profiles, context tracking codes, and status levels.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <div class="image-wrapper">
+                    <img src="caf64bb1-fc7c-457b-9ae9-bd91188361e7.jfif" alt="Admin Control Board UI">
+                </div>
+                <div class="card-meta">
+                    <h3>Admin Privilege Controls</h3>
+                    <p>An entry environment enabling dynamic user creation workflows, field form masking, operational privilege tier filters, and full authorization credential histories.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <div class="image-wrapper">
+                    <img src="198b968e-2281-4078-91ed-051006b644ec.jfif" alt="Reports Ledger System Layout View">
+                </div>
+                <div class="card-meta">
+                    <h3>Reports & Analytics Ledger</h3>
+                    <p>Designed for immediate reporting metrics generation with automated chronological tracking timestamps, document formatting filters, and direct document printing export actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="tools-section">
         <h2>The Tools I use daily</h2>
-        <p class="subtitle">Here are the core applications and development frameworks that power my layout workflow daily.</p>
-
         <div class="tools-grid">
             <div class="tool-card">
                 <div class="tool-icon icon-excel">X</div>
                 <h3>Excel</h3>
-                <p>Data manipulation, metrics organization, and tracking structural development models.</p>
+                <p>Data tracking and structured models.</p>
             </div>
-
             <div class="tool-card">
                 <div class="tool-icon icon-word">W</div>
                 <h3>Word</h3>
-                <p>Documentation design, drafting project specifications, and structured text layout assets.</p>
+                <p>Drafting project requirements.</p>
             </div>
-
             <div class="tool-card">
                 <div class="tool-icon icon-canva">Canva</div>
                 <h3>Canva</h3>
-                <p>Graphic layout, fast user interface mockup creation, prototyping, and design references.</p>
+                <p>UI mockups and asset generation.</p>
             </div>
-
             <div class="tool-card">
                 <div class="tool-icon icon-capcut">CapCut</div>
                 <h3>CapCut</h3>
-                <p>Video processing for layout recordings, web application tutorials, and concept demos.</p>
+                <p>Editing video application workflow walkthroughs.</p>
             </div>
-
             <div class="tool-card">
                 <div class="tool-icon icon-vscode"><i class="fas fa-code"></i></div>
                 <h3>VS Code</h3>
-                <p>Primary localized code environment for script architecture, markup, styling, and debugging.</p>
+                <p>Primary local layout editor.</p>
             </div>
-
             <div class="tool-card">
                 <div class="tool-icon icon-mysql"><i class="fas fa-database"></i></div>
                 <h3>MySQL</h3>
-                <p>Relational database setup, managing structured schemas, and active data architecture execution.</p>
+                <p>Relational schemas and queries.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Jian Castillon Web Application. All rights reserved.</p>
-        <p>
+        <p style="margin-top: 10px;">
             <a href="https://www.facebook.com/Yurujinx" target="_blank">
                 <i class="fab fa-facebook"></i> Connect via Facebook
             </a>
