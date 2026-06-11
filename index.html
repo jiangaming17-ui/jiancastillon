@@ -17,6 +17,7 @@
             background-color: #f9fbf9;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* --- Header / Navigation --- */
@@ -27,6 +28,9 @@
             padding: 20px 5%;
             background-color: #fff;
             border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
@@ -46,6 +50,11 @@
             color: #333;
             font-size: 0.95rem;
             font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #e61e43;
         }
 
         .social-icons {
@@ -90,7 +99,7 @@
 
         .hero-right {
             flex: 1.2;
-            background-color: #f3f6f0; /* Soft light background framework tint */
+            background-color: #f3f6f0; 
             padding: 60px 6%;
             display: flex;
             flex-direction: column;
@@ -112,7 +121,128 @@
             text-align: justify;
         }
 
-        /* --- Inventory System Showcase Section (Bird Gallery Reference) --- */
+        /* --- Core Skills & Interests Grid Section --- */
+        .skills-section {
+            background-color: #fff;
+            padding: 80px 5%;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .skills-section h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .skills-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .skills-display-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-focus-card {
+            background: #f9fbf9;
+            padding: 30px 20px;
+            border-radius: 8px;
+            border: 1px solid #eef2ed;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-focus-card:hover {
+            transform: translateY(-4px);
+            border-color: #d1ebd1;
+        }
+
+        .skill-focus-card i {
+            font-size: 2rem;
+            color: #e61e43;
+            margin-bottom: 15px;
+        }
+
+        .skill-focus-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .skill-focus-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- Background Timeline (Education & Experience) --- */
+        .timeline-section {
+            background-color: #f4f6f4;
+            padding: 80px 5%;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .timeline-column h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #111;
+            border-bottom: 2px solid #e61e43;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .timeline-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #e61e43;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h4 {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- Inventory System Showcase Section --- */
         .showcase-section {
             background-color: #fff;
             padding: 80px 5%;
@@ -133,7 +263,6 @@
             font-size: 1.05rem;
         }
 
-        /* Grid display showing off screenshots cleanly like a portfolio */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -265,6 +394,7 @@
             .hero-section { flex-direction: column; }
             .hero-left { min-height: 450px; }
             .hero-right { padding: 40px 6%; }
+            .timeline-container { grid-template-columns: 1fr; gap: 20px; }
             .showcase-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -275,7 +405,9 @@
         <div class="logo">Jian Castillon Web Application</div>
         <nav>
             <a href="#about-me">About Me</a>
-            <a href="#showcase">Inventory Project</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience & Education</a>
+            <a href="#showcase">Projects</a>
             <div class="social-icons">
                 <a href="https://www.facebook.com/Yurujinx" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </div>
@@ -291,9 +423,76 @@
             <p>Hi, I'm Jian Castillon, a passionate and dedicated web development enthusiast with a strong interest in creating modern, responsive, and user-friendly websites and web applications. I enjoy exploring the latest web technologies, improving my programming skills, and turning ideas into functional digital solutions.</p>
             <p>My interests include front-end and back-end development, website design, user experience optimization, and learning industry best practices. I am continuously expanding my knowledge of web development frameworks, programming languages, and development tools to stay current with the rapidly evolving technology landscape.</p>
             <p>I am committed to writing clean, efficient, and maintainable code while focusing on delivering high-quality results. I enjoy solving problems, learning new technologies, and collaborating with others to build innovative web solutions that make a positive impact.</p>
-            <p>As an aspiring web developer, I am eager to gain hands-on experience, contribute to meaningful projects, and further develop my technical and professional skills. My goal is to build a successful career in the technology industry by continuously learning, adapting, and embracing new challenges.</p>
         </div>
     </main>
+
+    <section class="skills-section" id="skills">
+        <h2>Skills & Interests</h2>
+        <p class="skills-subtitle">My core strengths and foundational expertise in structural layout building environments</p>
+        
+        <div class="skills-display-grid">
+            <div class="skill-focus-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Building architecture workflows with structured local coding frameworks.</p>
+            </div>
+            <div class="skill-focus-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Web Design</h3>
+                <p>Creating highly adaptable grid structures for seamless smartphone, tablet, and monitor viewports.</p>
+            </div>
+            <div class="skill-focus-card">
+                <i class="fas fa-code"></i>
+                <h3>Front-End Development</h3>
+                <p>Crafting interactive visual layout components with client-side logical tracking.</p>
+            </div>
+            <div class="skill-focus-card">
+                <i class="fas fa-server"></i>
+                <h3>Back-End Development</h3>
+                <p>Managing server controls, user roles, relational table frameworks, and logical structures.</p>
+            </div>
+            <div class="skill-focus-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML, CSS & JavaScript</h3>
+                <p>Core foundational syntax structures used daily to assemble layout blocks and components.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section" id="experience">
+        <div class="timeline-container">
+            
+            <div class="timeline-column">
+                <h2>Work Experience</h2>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 - 2025</span>
+                    <h3>SPES Worker</h3>
+                    <h4>Barangay Sto. Niño</h4>
+                    <p>Assisted in public administration workflows, community management, and technical documentation operations handling local record tracking metrics.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2023 - 2024</span>
+                    <h3>SPES Worker</h3>
+                    <h4>City Anti-Drug Abuse Council (CADAC)</h4>
+                    <p>Contributed to civic data records tracking and administrative reporting supporting communication workflows and local awareness initiatives.</p>
+                </div>
+            </div>
+
+            <div class="timeline-column">
+                <h2>Education</h2>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 - 2028 (Expected)</span>
+                    <h3>Bachelor of Science Degree</h3>
+                    <h4>Davao del Norte State College (DNSC)</h4>
+                    <p>Actively expanding technical domain competencies, analytical paradigms, and foundational software engineering methodologies.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section class="showcase-section" id="showcase">
         <h2>Starlee Marketing System</h2>
